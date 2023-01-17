@@ -1,0 +1,12 @@
+C:\ProjetoFamilia\Costa.Solution\Costa.Domain\obj\Debug\net5.0\Costa.Domain.csproj.AssemblyReference.cache
+C:\ProjetoFamilia\Costa.Solution\Costa.Domain\obj\Debug\net5.0\Costa.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjetoFamilia\Costa.Solution\Costa.Domain\obj\Debug\net5.0\Costa.Domain.AssemblyInfoInputs.cache
+C:\ProjetoFamilia\Costa.Solution\Costa.Domain\obj\Debug\net5.0\Costa.Domain.AssemblyInfo.cs
+C:\ProjetoFamilia\Costa.Solution\Costa.Domain\obj\Debug\net5.0\Costa.Domain.csproj.CoreCompileInputs.cache
+C:\ProjetoFamilia\Costa.Solution\Costa.Domain\bin\Debug\net5.0\Costa.Domain.deps.json
+C:\ProjetoFamilia\Costa.Solution\Costa.Domain\bin\Debug\net5.0\Costa.Domain.dll
+C:\ProjetoFamilia\Costa.Solution\Costa.Domain\bin\Debug\net5.0\Costa.Domain.pdb
+C:\ProjetoFamilia\Costa.Solution\Costa.Domain\obj\Debug\net5.0\Costa.Domain.dll
+C:\ProjetoFamilia\Costa.Solution\Costa.Domain\obj\Debug\net5.0\refint\Costa.Domain.dll
+C:\ProjetoFamilia\Costa.Solution\Costa.Domain\obj\Debug\net5.0\Costa.Domain.pdb
+C:\ProjetoFamilia\Costa.Solution\Costa.Domain\obj\Debug\net5.0\ref\Costa.Domain.dll

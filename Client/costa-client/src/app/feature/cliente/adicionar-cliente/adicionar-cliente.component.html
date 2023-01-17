@@ -1,0 +1,22 @@
+<form [formGroup]="formCliente" (ngSubmit)="salvarCliente()">
+    <br>
+    <div class="form-group">
+        <label for="cpf" class="form-label">CPF</label>
+        <input id="cpf" formControlName="cpfCliente" type="text" class="form-control"  autocomplete="off">
+        <label for="cpf" class="form-label">Nome</label>
+        <input id="cpf" formControlName="nomeCliente" type="text" class="form-control"  autocomplete="off">
+        <label for="cpf" class="form-label">Data Nascimento</label>
+        <input id="cpf" formControlName="dataCliente" type="date" class="form-control"  autocomplete="off">
+    </div>
+    <br>
+      
+    <div class="alert alert-danger mt-1" *ngIf="formCliente.invalid && !formCliente.pristine">
+        <span *ngIf="formCliente.get('cpfCliente')?.errors?.['required']">O cpf do cliente é obrigatório!<br></span>
+        <span *ngIf="formCliente.get('cpfCliente')?.errors?.['maxlength']">O cpf deve ter no máximo 11 digitos<br></span>
+        <span *ngIf="formCliente.get('nomeCliente')?.errors?.['required']">O nome do cliente é obrigatório!<br></span>
+        <span *ngIf="formCliente.get('nomeCliente')?.errors?.['minlength']">O nome deve ter no mínimo 3 digitos<br></span>
+        <span *ngIf="formCliente.get('dataCliente')?.errors?.['required']">A data de nascimento é Obrigatória!<br></span>
+   </div>
+   <input type="submit" value="Salvar" class="btn btn-primary" [disabled]="formCliente.invalid"/>
+   <br>
+</form>

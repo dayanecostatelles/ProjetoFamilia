@@ -1,0 +1,34 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <i class="bi bi-airplane-engines"></i>
+  <span>Pizzaria da Day</span>
+</div>
+
+<div class="container-fluid menu">
+  <div class="row">
+    <div class="col-12">
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand"  routerLink="/">Pagina Inicial</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" routerLink="/cliente/adicionar" routerLinkActive="active">Clientes</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container col-6">
+      <router-outlet></router-outlet>
+<div>
+<p><strong>Sejam bem-vindos a Pizzaria da Day, aqui você poderá cadastrar clientes, produtos e fazer os seus pedidos!</strong></p>
+  <img  class="img-fluid" src="https://static.vecteezy.com/ti/vetor-gratis/p1/1953695-cute-chef-holding-a-pizza-cartoon-illustration-vetor.jpg1" />
+</div>
+    </div>
+  </div>
+</div>
