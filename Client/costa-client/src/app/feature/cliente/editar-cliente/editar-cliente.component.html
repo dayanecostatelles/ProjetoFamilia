@@ -1,0 +1,20 @@
+<form [formGroup]="formCliente" (ngSubmit)="salvarCliente()">
+    <br>
+    <div class="form-group">
+        <label for="cpf" class="form-label">CPF</label>
+        <input id="cpf" formControlName="cpfCliente" [(ngModel)]="clienteBuscado.cpf" type="text" class="form-control"  autocomplete="off">
+        <label for="nome" class="form-label">Nome</label>
+        <input id="nome" formControlName="nomeCliente" [(ngModel)]="clienteBuscado.nome" type="text" class="form-control"  autocomplete="off">
+        <label for="dataNascimento" class="form-label">Data Nascimento</label>
+        <input id="dataNascimento" formControlName="dataNascimentoCliente" datetime="yyyy-MM-dd" [(ngModel)]="clienteBuscado.dataNascimento" class="form-control"  autocomplete="off">
+    </div>
+    <br>
+   
+   
+    <input type="submit" value="Salvar" class="btn btn-primary" [disabled]="formCliente.invalid"/>
+    <br>
+    <div class="alert alert-danger mt-1" *ngIf="formCliente.invalid && !formCliente.pristine">
+        <span *ngIf="formCliente.get('precoCliente')?.errors?.['required']">O cpf do cliente é obrigatório!<br></span>
+        <span *ngIf="formCliente.get('precoClinte')?.errors?.['maxlength']">O cpf deve ter no máximo 11 digitos<br></span>
+   </div>
+</form>
