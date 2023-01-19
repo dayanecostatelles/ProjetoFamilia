@@ -1,0 +1,30 @@
+<div class="row mt-4 d-flex align-items-end">
+    <div class="col-6">  
+        <label for="cpf" class="form-name" >CPF:</label>   
+        <input type="text" class="form-control" [(ngModel)]="cpfCliente" required>  
+    </div>
+    <div class="col-6">   
+        <button class="btn btn-primary" (click)="buscarCliente()">Buscar Cliente</button>    
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="alert alert-danger col-12 m-2" *ngIf="dadosEncontrados == false" role="alert">
+        Cliente não encontrado!
+    </div>
+    <div class="alert alert-success col-12 m-2" *ngIf="dadosEncontrados" role="alert">
+        Cliente encontrado!
+    </div>
+   
+    <div  class="col-6" *ngIf="dadosEncontrados">
+        <div>
+            <label for="cpf">CPF: {{clienteBuscado.cpf}}</label>
+        </div>
+        <div>
+            <label for="nome">Nome: {{clienteBuscado.nome}}</label>
+        </div>
+        <div>
+            <label for="data">Data Nascimento:  {{clienteBuscado.dataNascimento}}</label>
+        </div>
+        
+    </div>
+</div>
