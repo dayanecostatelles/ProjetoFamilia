@@ -670,24 +670,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\marco\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git\\ProjetoFamilia\\Costa.Solution\\Costa.WebApi\\Costa.WebApi.csproj",
+      "projectUniqueName": "D:\\projects\\ProjetoFamilia\\Costa.Solution\\Costa.WebApi\\Costa.WebApi.csproj",
       "projectName": "Costa.WebApi",
-      "projectPath": "C:\\Git\\ProjetoFamilia\\Costa.Solution\\Costa.WebApi\\Costa.WebApi.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Git\\ProjetoFamilia\\Costa.Solution\\Costa.WebApi\\obj\\",
+      "projectPath": "D:\\projects\\ProjetoFamilia\\Costa.Solution\\Costa.WebApi\\Costa.WebApi.csproj",
+      "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
+      "outputPath": "D:\\projects\\ProjetoFamilia\\Costa.Solution\\Costa.WebApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -701,8 +696,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Git\\ProjetoFamilia\\Costa.Solution\\Costa.Infra.Data\\Costa.Infra.Data.csproj": {
-              "projectPath": "C:\\Git\\ProjetoFamilia\\Costa.Solution\\Costa.Infra.Data\\Costa.Infra.Data.csproj"
+            "D:\\projects\\ProjetoFamilia\\Costa.Solution\\Costa.Infra.Data\\Costa.Infra.Data.csproj": {
+              "projectPath": "D:\\projects\\ProjetoFamilia\\Costa.Solution\\Costa.Infra.Data\\Costa.Infra.Data.csproj"
             }
           }
         }
@@ -740,7 +735,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
       }
     }
   }
