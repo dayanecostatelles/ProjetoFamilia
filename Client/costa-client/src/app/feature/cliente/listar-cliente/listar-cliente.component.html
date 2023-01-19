@@ -1,1 +1,33 @@
-listar
+<div class="container">
+    <div class="row mt-2">
+        <a href="#" routerLink="/cliente/adicionar" routerLinkActive="active" class="badge badge-success">Adicionar cliente</a>
+        <a href="#" routerLink="/cliente/busca" routerLinkActive="active" class="badge badge-info">Buscar cliente</a>
+      <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Data Nasc</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of clientesBuscados">
+                    
+                      <td>
+                        {{ item.nome }}
+                      </td>
+                    <td>
+                      {{ item.cpf }}
+                    </td>
+                    <td>
+                        {{ item.dataNascimento }}
+                      </td>
+                      <a href="#" [routerLink]="['/cliente/editar/', item.cpf]" routerLinkActive="active" class="badge badge-warning">Editar</a>
+                      <button  (click)="deletar($event, item.cpf)" class="badge badge-danger">Deletar</button>
+    
+                  </tr>
+            </tbody>
+          </table>
+        
+    </div>
+    </div>
