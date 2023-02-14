@@ -15,7 +15,7 @@ const routes: Routes = [
         component: AdicionarClienteComponent,
       },
       {
-        path: 'editar',
+        path: 'editar/:cpf',
         component: EditarClienteComponent,
       },
       {
