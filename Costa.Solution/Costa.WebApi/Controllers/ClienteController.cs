@@ -74,7 +74,7 @@ namespace Costa.WebApi.Controllers
         }
         [HttpPut()]
         public IActionResult EditarCliente(Cliente novoCliente)
-        {
+                                                                                                                                        {
             try
             {
                 _clienteRepository.AtualizarCliente(novoCliente);
