@@ -23,14 +23,14 @@ public class ServicoDAO
                 comando.Connection = conexao;
 
                 string sql = @"INSERT INTO SERVICO 
-                                    (ID,NOME, VALOR) VALUES ( @ID, @NOME, @VALOR)";
+                                    (NOME, VALOR, TIPO) VALUES (@NOME, @VALOR, @TIPO)";
 
-                comando.Parameters.AddWithValue("@ID", servico.ID);
+                ;
                 comando.Parameters.AddWithValue("@NOME", servico.Nome);
                 comando.Parameters.AddWithValue("@VALOR", servico.Valor);
+                comando.Parameters.AddWithValue("@TIPO", servico.Tipo);
 
-
-                comando.CommandText = sql;
+                    comando.CommandText = sql;
 
                 comando.ExecuteNonQuery();
             }
@@ -67,11 +67,12 @@ public class ServicoDAO
                 comando.Connection = conexao;
 
                 string sql = @"UPDATE SERVICO 
-                                    SET NOME = @NOME, VALOR = @VALOR WHERE ID = @ID";
+                                    SET NOME = @NOME, VALOR = @VALOR, TIPO = @TIPOS WHERE ID = @ID";
 
                 comando.Parameters.AddWithValue("@ID", servico.ID);
                 comando.Parameters.AddWithValue("@NOME", servico.Nome);
                 comando.Parameters.AddWithValue("@VALOR", servico.Valor);
+                    comando.Parameters.AddWithValue("@TIPO", servico.Tipo);
 
 
                 comando.CommandText = sql;
@@ -94,7 +95,7 @@ public class ServicoDAO
 
                 comando.Connection = conexao;
 
-                string sql = @"SELECT ID, NOME, VALOR FROM SERVICO";
+                string sql = @"SELECT ID, NOME, VALOR, TIPO FROM SERVICO";
 
                 comando.CommandText = sql;
 
@@ -106,8 +107,10 @@ public class ServicoDAO
                     (
                         long.Parse(leitor["ID"].ToString()),
                         leitor["NOME"].ToString(),
-                        double.Parse(leitor["VALOR"].ToString())
-                        
+                        double.Parse(leitor["VALOR"].ToString()),
+                        int.Parse(leitor["TIPO"].ToString())
+
+
 
                     );
                     listaServico.Add(servicoBuscado);
@@ -141,7 +144,8 @@ public class ServicoDAO
                     (
                         long.Parse(leitor["ID"].ToString()),
                         leitor["NOME"].ToString(),
-                        double.Parse(leitor["VALOR"].ToString())
+                        double.Parse(leitor["VALOR"].ToString()),
+                        int.Parse(leitor["TIPO"].ToString())
 
                     );
 
