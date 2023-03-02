@@ -13,20 +13,25 @@ namespace Costa.Domain
         public string Nome { get; set; }
         public double Valor { get; set; }
 
+        public int Tipo { get; set; }
 
-        public Servico(long id, string nome, double valor)
+
+        public Servico(long id, string nome, double valor, int tipo)
         {
             this.ID = id;
             this.Nome = nome;
             this.Valor = valor;
+            this.Tipo = tipo;
 
         }
         public void Validar()
         {
             if (string.IsNullOrEmpty(Nome))
                 throw new ServicoDomainException("Nome é obrigatório!");
-            if (Valor > 0)
+            if (Valor < 0)
                 throw new ServicoDomainException("O valor do servico é obrigatório");
+            if (Tipo <0 || Tipo >1)
+                throw new ServicoDomainException("O tipo de serviço invalido");
         }
     }
 
