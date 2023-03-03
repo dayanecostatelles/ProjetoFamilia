@@ -46,7 +46,7 @@ public class ServicoDAO
             {
                 comando.Connection = conexao;
 
-                string sql = @"DELETE FROM SERVICO WHERE CPF = @ID";
+                string sql = @"DELETE FROM SERVICO WHERE ID = @ID";
 
                 comando.Parameters.AddWithValue("@ID", id);
 
@@ -67,7 +67,7 @@ public class ServicoDAO
                 comando.Connection = conexao;
 
                 string sql = @"UPDATE SERVICO 
-                                    SET NOME = @NOME, VALOR = @VALOR, TIPO = @TIPOS WHERE ID = @ID";
+                                    SET NOME = @NOME, VALOR = @VALOR, TIPO = @TIPO WHERE ID = @ID";
 
                 comando.Parameters.AddWithValue("@ID", servico.ID);
                 comando.Parameters.AddWithValue("@NOME", servico.Nome);
@@ -131,7 +131,7 @@ public class ServicoDAO
 
                 comando.Connection = conexao;
 
-                string sql = @"SELECT ID, NOME, VALOR FROM SERVICO WHERE ID = @ID";
+                string sql = @"SELECT ID, NOME, VALOR, TIPO FROM SERVICO WHERE ID = @ID";
                 comando.CommandText = sql;
 
                 comando.Parameters.AddWithValue("@ID", id);

@@ -58,7 +58,7 @@ namespace Costa.WebApi.Controllers
                 return BadRequest(e.Message);
             }
         }
-        [HttpGet("{cpf}")]
+        [HttpGet("{id}")]
         public IActionResult GetServicoPorID(long id)
         {
             try
