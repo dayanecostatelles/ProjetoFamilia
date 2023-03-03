@@ -1,0 +1,1 @@
+Server=br496.hostgator.com.br;Port=3306;Database=blog9895_projetofamilia;Uid=blog9895_projetofamilia;Pwd=DayCarlosTere;

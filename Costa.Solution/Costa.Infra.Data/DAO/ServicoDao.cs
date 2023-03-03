@@ -1,4 +1,5 @@
 ﻿using Costa.Domain;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,154 +8,154 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Costa.Infra.Data.DAO
-{ 
-public class ServicoDAO
 {
-
-    private readonly string _connectionString =
-     @"server=.\SQLexpress;initial catalog=COSTADB;integrated security=true;";
-    public void RegistrarServico(Servico servico)
+    public class ServicoDAO
     {
-        using (var conexao = new SqlConnection(_connectionString))
-        {
-            conexao.Open();
-            using (var comando = new SqlCommand())
-            {
-                comando.Connection = conexao;
 
-                string sql = @"INSERT INTO SERVICO 
+        private readonly string _connectionString =
+         @"Server=br496.hostgator.com.br;Port=3306;Database=blog9895_projetofamilia;Uid=blog9895_projetofamilia;Pwd=DayCarlosTere;";
+        public void RegistrarServico(Servico servico)
+        {
+            using (var conexao = new MySqlConnection(_connectionString))
+            {
+                conexao.Open();
+                using (var comando = new MySqlCommand())
+                {
+                    comando.Connection = conexao;
+
+                    string sql = @"INSERT INTO SERVICO 
                                     (NOME, VALOR, TIPO) VALUES (@NOME, @VALOR, @TIPO)";
 
-                ;
-                comando.Parameters.AddWithValue("@NOME", servico.Nome);
-                comando.Parameters.AddWithValue("@VALOR", servico.Valor);
-                comando.Parameters.AddWithValue("@TIPO", servico.Tipo);
+                    ;
+                    comando.Parameters.AddWithValue("@NOME", servico.Nome);
+                    comando.Parameters.AddWithValue("@VALOR", servico.Valor);
+                    comando.Parameters.AddWithValue("@TIPO", servico.Tipo);
 
                     comando.CommandText = sql;
 
-                comando.ExecuteNonQuery();
+                    comando.ExecuteNonQuery();
+                }
             }
         }
-    }
-    public void DeletarServico(long id)
-    {
-        using (var conexao = new SqlConnection(_connectionString))
+        public void DeletarServico(long id)
         {
-            conexao.Open();
-
-            using (var comando = new SqlCommand())
+            using (var conexao = new MySqlConnection(_connectionString))
             {
-                comando.Connection = conexao;
+                conexao.Open();
+
+                using (var comando = new MySqlCommand())
+                {
+                    comando.Connection = conexao;
 
                 string sql = @"DELETE FROM SERVICO WHERE ID = @ID";
 
-                comando.Parameters.AddWithValue("@ID", id);
+                    comando.Parameters.AddWithValue("@ID", id);
 
-                comando.CommandText = sql;
+                    comando.CommandText = sql;
 
-                comando.ExecuteNonQuery();
+                    comando.ExecuteNonQuery();
+                }
             }
         }
-    }
-    public void AtualizarServico(Servico servico)
-    {
-        using (var conexao = new SqlConnection(_connectionString))
+        public void AtualizarServico(Servico servico)
         {
-            conexao.Open();
-
-            using (var comando = new SqlCommand())
+            using (var conexao = new MySqlConnection(_connectionString))
             {
-                comando.Connection = conexao;
+                conexao.Open();
+
+                using (var comando = new MySqlCommand())
+                {
+                    comando.Connection = conexao;
 
                 string sql = @"UPDATE SERVICO 
                                     SET NOME = @NOME, VALOR = @VALOR, TIPO = @TIPO WHERE ID = @ID";
 
-                comando.Parameters.AddWithValue("@ID", servico.ID);
-                comando.Parameters.AddWithValue("@NOME", servico.Nome);
-                comando.Parameters.AddWithValue("@VALOR", servico.Valor);
+                    comando.Parameters.AddWithValue("@ID", servico.ID);
+                    comando.Parameters.AddWithValue("@NOME", servico.Nome);
+                    comando.Parameters.AddWithValue("@VALOR", servico.Valor);
                     comando.Parameters.AddWithValue("@TIPO", servico.Tipo);
 
 
-                comando.CommandText = sql;
+                    comando.CommandText = sql;
 
-                comando.ExecuteNonQuery();
+                    comando.ExecuteNonQuery();
 
-            }
-        }
-    }
-    public List<Servico> BuscarTodos()
-    {
-        var listaServico = new List<Servico>();
-
-        using (var conexao = new SqlConnection(_connectionString))
-        {
-            conexao.Open();
-
-            using (var comando = new SqlCommand())
-            {
-
-                comando.Connection = conexao;
-
-                string sql = @"SELECT ID, NOME, VALOR, TIPO FROM SERVICO";
-
-                comando.CommandText = sql;
-
-                var leitor = comando.ExecuteReader();
-
-                while (leitor.Read())
-                {
-                    var servicoBuscado = new Servico
-                    (
-                        long.Parse(leitor["ID"].ToString()),
-                        leitor["NOME"].ToString(),
-                        double.Parse(leitor["VALOR"].ToString()),
-                        int.Parse(leitor["TIPO"].ToString())
-
-
-
-                    );
-                    listaServico.Add(servicoBuscado);
                 }
             }
         }
-        return listaServico;
-    }
-    public Servico BuscarServicoPorID(long id)
-    {
-
-        using (var conexao = new SqlConnection(_connectionString))
+        public List<Servico> BuscarTodos()
         {
-            conexao.Open();
+            var listaServico = new List<Servico>();
 
-            using (var comando = new SqlCommand())
+            using (var conexao = new MySqlConnection(_connectionString))
             {
+                conexao.Open();
 
-                comando.Connection = conexao;
+                using (var comando = new MySqlCommand())
+                {
+
+                    comando.Connection = conexao;
+
+                    string sql = @"SELECT ID, NOME, VALOR, TIPO FROM SERVICO";
+
+                    comando.CommandText = sql;
+
+                    var leitor = comando.ExecuteReader();
+
+                    while (leitor.Read())
+                    {
+                        var servicoBuscado = new Servico
+                        (
+                            long.Parse(leitor["ID"].ToString()),
+                            leitor["NOME"].ToString(),
+                            double.Parse(leitor["VALOR"].ToString()),
+                            int.Parse(leitor["TIPO"].ToString())
+
+
+
+                        );
+                        listaServico.Add(servicoBuscado);
+                    }
+                }
+            }
+            return listaServico;
+        }
+        public Servico BuscarServicoPorID(long id)
+        {
+
+            using (var conexao = new MySqlConnection(_connectionString))
+            {
+                conexao.Open();
+
+                using (var comando = new MySqlCommand())
+                {
+
+                    comando.Connection = conexao;
 
                 string sql = @"SELECT ID, NOME, VALOR, TIPO FROM SERVICO WHERE ID = @ID";
                 comando.CommandText = sql;
 
-                comando.Parameters.AddWithValue("@ID", id);
+                    comando.Parameters.AddWithValue("@ID", id);
 
-                var leitor = comando.ExecuteReader();
+                    var leitor = comando.ExecuteReader();
 
-                while (leitor.Read())
-                {
-                    var servicoBuscado = new Servico
-                    (
-                        long.Parse(leitor["ID"].ToString()),
-                        leitor["NOME"].ToString(),
-                        double.Parse(leitor["VALOR"].ToString()),
-                        int.Parse(leitor["TIPO"].ToString())
+                    while (leitor.Read())
+                    {
+                        var servicoBuscado = new Servico
+                        (
+                            long.Parse(leitor["ID"].ToString()),
+                            leitor["NOME"].ToString(),
+                            double.Parse(leitor["VALOR"].ToString()),
+                            int.Parse(leitor["TIPO"].ToString())
 
-                    );
+                        );
 
-                    return servicoBuscado;
+                        return servicoBuscado;
+                    }
                 }
             }
-        }
 
-        return null;
+            return null;
+        }
     }
-}
 }
