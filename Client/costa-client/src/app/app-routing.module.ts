@@ -5,6 +5,9 @@ import { EditarClienteComponent } from './feature/cliente/editar-cliente/editar-
 import { ListarClienteComponent } from './feature/cliente/listar-cliente/listar-cliente.component';
 import { BuscarClienteComponent } from './feature/cliente/buscar-cliente/buscar-cliente.component';
 import { BuscarServicoComponent } from './feature/servico/buscar-servico/buscar-servico.component';
+import { AdicionarServicoComponent } from './feature/servico/adicionar-servico/adicionar-servico.component';
+import { EditarServicoComponent } from './feature/servico/editar-servico/editar-servico.component';
+import { ListarServicoComponent } from './feature/servico/listar-servico/listar-servico.component';
 
 
 const routes: Routes = [
