@@ -13,11 +13,10 @@
   <br>
     
   <div class="alert alert-danger mt-1" *ngIf="formServico.invalid && !formServico.pristine">
-      <span *ngIf="formCliente.get('cpfCliente')?.errors?.['maxlength']">O cpf deve ter no máximo 11 digitos<br></span>
-      <span *ngIf="formCliente.get('nomeCliente')?.errors?.['required']">O nome do cliente é obrigatório!<br></span>
-      <span *ngIf="formCliente.get('nomeCliente')?.errors?.['minlength']">O nome deve ter no mínimo 3 digitos<br></span>
-      <span *ngIf="formCliente.get('dataCliente')?.errors?.['required']">A data de nascimento é Obrigatória!<br></span>
+      <span *ngIf="formServico.get('nomeServico')?.errors?.['required']">O nome do servico é obrigatório!<br></span>
+      <span *ngIf="formServico.get('valorServico')?.errors?.['required']">O valor do servico deve ser obrigatorio<br></span>
+      <span *ngIf="formServico.get('tiposervico')?.errors?.['required']">O tipo de servico é obrigatorio!<br></span>
  </div>
- <input type="submit" value="Salvar" class="btn btn-primary" [disabled]="formCliente.invalid"/>
+ <input type="submit" value="Salvar" class="btn btn-primary" [disabled]="formServico.invalid"/>
  <br>
 </form>

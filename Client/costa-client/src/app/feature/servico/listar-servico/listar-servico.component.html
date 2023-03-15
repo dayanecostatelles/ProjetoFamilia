@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row mt-2">
+        <a href="#" routerLink="/servico/adicionar" routerLinkActive="active" class="badge badge-success">Adicionar servico</a>
+        <a href="#" routerLink="/servico/busca" routerLinkActive="active" class="badge badge-info">Buscar servico</a>
+      <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of servicosBuscados">
+                    
+                      <td>
+                        {{ item.nome }}
+                      </td>
+                    <td>
+                      {{ item.valor }}
+                    </td>
+                    <td>
+                        {{ item.tipo }}
+                      </td>
+                      <td>
+                      <a href="#" [routerLink]="['/servico/editar/', item.id]" routerLinkActive="active" class="badge badge-warning">Editar</a>
+                    </td>
+                    <td>
+                      <button  (click)="servico($event, item.id)" class="badge badge-danger">Deletar</button>
+                  </td>
+                  </tr>
+            </tbody>
+          </table>
+        
+    </div>
+    </div>
