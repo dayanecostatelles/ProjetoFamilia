@@ -4,6 +4,7 @@ import { AdicionarClienteComponent } from './feature/cliente/adicionar-cliente/a
 import { EditarClienteComponent } from './feature/cliente/editar-cliente/editar-cliente.component';
 import { ListarClienteComponent } from './feature/cliente/listar-cliente/listar-cliente.component';
 import { BuscarClienteComponent } from './feature/cliente/buscar-cliente/buscar-cliente.component';
+import { BuscarServicoComponent } from './feature/servico/buscar-servico/buscar-servico.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,29 @@ const routes: Routes = [
     ]
     
   },
+  {
+    path: 'servico',
+    children: [
+      {
+        path: 'adicionar',
+        component: AdicionarServicoComponent,
+      },
+      {
+        path: 'editar/:id',
+        component: EditarServicoComponent,
+      },
+      {
+        path: 'listar',
+        component: ListarServicoComponent,
+      },
+      {
+        path: 'buscar',
+        component: BuscarServicoComponent,
+      }
+      
+    ]
     
+  }
     ];
 
 @NgModule({

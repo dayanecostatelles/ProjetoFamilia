@@ -8,39 +8,69 @@
     <div class="col-12">
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="row">
-          <div class="container col-6">
-          <a class="navbar-brand" routerLink="/">Pagina Inicial</a>
-        </div>
-        <div class="container col-6">
-          <div class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Clientes
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" routerLink="/cliente/listar"
-                  >Listar Cliente</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" routerLink="/cliente/adicionar"
-                  >Adicionar Cliente</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" routerLink="/cliente/editar"
-                  >Editar Cliente</a
-                >
-              </li>
-            </ul>
+          <div class="container col-3">
+            <a class="navbar-brand" routerLink="/">Pagina Inicial</a>
           </div>
-        </div>
+          <div class="container col-4">
+            <div class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Clientes
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" routerLink="/cliente/listar"
+                    >Listar Cliente</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="/cliente/adicionar"
+                    >Adicionar Cliente</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="/cliente/editar"
+                    >Editar Cliente</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="container col-5">
+            <div class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Serviços
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" routerLink="/servico/listar"
+                    >Listar Serviços</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="/servico/adicionar"
+                    >Adicionar Serviço</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="/servico/editar"
+                    >Editar Serviço</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </nav>
     </div>
@@ -49,14 +79,8 @@
     <div class="container col-6">
       <router-outlet></router-outlet>
       <div>
-        <p>
-          
-          
-        </p>
-        <img
-          class="img-fluid"
-          src="./../assets/logo.jpeg"
-        />
+        <p></p>
+        <img class="img-fluid" src="./../assets/logo.jpeg" />
       </div>
     </div>
   </div>
