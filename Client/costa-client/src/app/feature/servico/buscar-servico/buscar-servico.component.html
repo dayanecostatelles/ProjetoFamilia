@@ -1,0 +1,33 @@
+<div class="row mt-4 d-flex align-items-end">
+    <div class="col-6">  
+        <label for="id" class="form-name" >ID:</label>   
+        <input type="text" class="form-control" [(ngModel)]="idServico" required>  
+    </div>
+    <div class="col-6">   
+        <button class="btn btn-primary" (click)="buscarServico()">Buscar Servico</button>    
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="alert alert-danger col-12 m-2" *ngIf="dadosEncontrados == false" role="alert">
+        Servico não encontrado!
+    </div>
+    <div class="alert alert-success col-12 m-2" *ngIf="dadosEncontrados" role="alert">
+        Servico encontrado!
+    </div>
+   
+    <div  class="col-6" *ngIf="dadosEncontrados">
+        <div>
+            <label for="id">ID: {{servicoBuscado.cpf}}</label>
+        </div>
+        <div>
+            <label for="nome">Nome: {{servicoBuscado.nome}}</label>
+        </div>
+        <div>
+            <label for="valor">Valor:  {{servicoBuscado.valor}}</label>
+        </div>
+        <div>
+            <label for="tipo">Tipo:  {{servicoBuscado.tipo}}</label>
+        </div>
+        
+    </div>
+</div>
