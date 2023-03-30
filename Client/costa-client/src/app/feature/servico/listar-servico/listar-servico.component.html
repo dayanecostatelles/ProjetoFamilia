@@ -17,6 +17,7 @@
     <table class="table">
       <thead>
         <tr>
+          <th scope="col">idServico</th>
           <th scope="col">Nome</th>
           <th scope="col">Valor</th>
           <th scope="col">Tipo</th>
@@ -24,6 +25,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of servicosBuscados">
+          <td>
+            {{ item.id }}
+          </td>
           <td>
             {{ item.nome }}
           </td>
@@ -36,7 +40,7 @@
           <td>
             <a
               href="#"
-              [routerLink]="['/servico/editar/', item.idServico]"
+              [routerLink]="['/servico/editar/', item.id]"
               routerLinkActive="active"
               class="badge badge-warning"
               >Editar</a
@@ -44,7 +48,7 @@
           </td>
           <td>
             <button
-              (click)="deletar($event, item.idServico)"
+              (click)="deletar($event, item.id)"
               class="badge badge-danger"
             >
               Deletar
