@@ -55,6 +55,7 @@ public formCliente!: FormGroup;
       () => { 
         alert('Cliente salvo com sucesso!')
        this.formCliente.reset();
+       this.router.navigate(['/cliente/listar'])
       } );
   }  
 

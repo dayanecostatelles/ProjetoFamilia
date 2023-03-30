@@ -1,5 +1,5 @@
 export interface IServico {
-    idServico?: number;
+    id?: number;
     nome: string;
     valor: number;
     tipo:number;

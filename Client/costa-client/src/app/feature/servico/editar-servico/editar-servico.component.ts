@@ -7,6 +7,7 @@ import { take } from 'rxjs';
 import { IServico } from '../servico.model';
 
 
+
 @Component({
   selector: 'app-editar-servico',
   templateUrl: './editar-servico.component.html',
@@ -46,7 +47,7 @@ public formServico!: FormGroup;
 
   salvarServico() : void {
     let servico:IServico = {
-      idServico: this.formServico.get('idServico')?.value, 
+      id: this.formServico.get('idServico')?.value, 
       nome: this.formServico.get('nomeServico')?.value, 
       valor: this.formServico.get('valorServico')?.value, 
       tipo: this.formServico.get('tipoServico')?.value, 
@@ -57,6 +58,7 @@ public formServico!: FormGroup;
       () => { 
         alert('Servico salvo com sucesso!')
        this.formServico.reset();
+       this.router.navigate(['/servico/listar'])
       } );
   }  
 
