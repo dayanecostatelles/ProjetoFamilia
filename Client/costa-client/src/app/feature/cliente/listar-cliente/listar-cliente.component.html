@@ -1,36 +1,63 @@
 <div class="container">
-    <div class="row mt-2">
-        <a href="#" routerLink="/cliente/adicionar" routerLinkActive="active" class="badge badge-success">Adicionar cliente</a>
-        <a href="#" routerLink="/cliente/busca" routerLinkActive="active" class="badge badge-info">Buscar cliente</a>
-      <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">CPF</th>
-                <th scope="col">Data Nasc</th>
-              </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of clientesBuscados">
-                    
-                      <td>
-                        {{ item.nome }}
-                      </td>
-                    <td>
-                      {{ item.cpf }}
-                    </td>
-                    <td>
-                        {{ item.dataNascimento }}
-                      </td>
-                      <td>
-                      <a href="#" [routerLink]="['/cliente/editar/', item.cpf]" routerLinkActive="active" class="badge badge-warning">Editar</a>
-                    </td>
-                    <td>
-                      <button  (click)="deletar($event, item.cpf)" class="badge badge-danger">Deletar</button>
-                  </td>
-                  </tr>
-            </tbody>
-          </table>
-        
+  <div class="row mt-2">
+    <div class="col-3">
+      <button
+        href="#"
+        routerLink="/cliente/adicionar"
+        routerLinkActive="active"
+        class="btn btn-success"
+      >
+        Adicionar cliente
+      </button>
     </div>
+    <div class="col-3">
+      <button
+        href="#"
+        routerLink="/cliente/busca"
+        routerLinkActive="active"
+        class="btn btn-info"
+      >
+        Buscar cliente
+      </button>
     </div>
+  </div>
+  <div class="row mt-2">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Data Nasc</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of clientesBuscados">
+          <td>
+            {{ item.nome }}
+          </td>
+          <td>
+            {{ item.cpf }}
+          </td>
+          <td>
+            {{ item.dataNascimento }}
+          </td>
+          <td>
+            <button
+              href="#"
+              [routerLink]="['/cliente/editar/', item.cpf]"
+              routerLinkActive="active"
+              class="btn btn-warning"
+            >
+              Editar
+            </button>
+          </td>
+          <td>
+            <button (click)="deletar($event, item.cpf)" class="btn btn-danger">
+              Deletar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
