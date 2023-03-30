@@ -1,19 +1,48 @@
 <form [formGroup]="formServico" (ngSubmit)="salvarServico()">
-    <br>
-    <div class="form-group">
-        <label for="id" class="form-label">ID</label>
-        <input id="id" formControlName="idServico" [(ngModel)]="servicoBuscado.id" type="text" class="form-control"  autocomplete="off">
-        <label for="nome" class="form-label">Nome</label>
-        <input id="nome" formControlName="nomeServico" [(ngModel)]="servicoBuscado.nome" type="text" class="form-control"  autocomplete="off">
-        <label for="tipo" class="form-label">Tipo</label>
-        <input id="tipo" formControlName="tipoServico" [(ngModel)]="servicoBuscado.tipo" class="form-control"  autocomplete="off">
-        <label for="valor" class="form-label">Valor</label>
-        <input id="valor" formControlName="valorServico" [(ngModel)]="servicoBuscado.valor" class="form-control"  autocomplete="off">
-    </div>
-    <br>
-   
-   
-    <input type="submit" value="Salvar" class="btn btn-primary" [disabled]="formServico.invalid"/>
-    <br>
-    
+  <br />
+  <div class="form-group">
+    <label for="id" class="form-label">ID</label>
+    <input
+      id="id"
+      formControlName="idServico"
+      [(ngModel)]="servicoBuscado.idServico"
+      type="text"
+      class="form-control"
+      autocomplete="off"
+    />
+    <label for="nome" class="form-label">Nome</label>
+    <input
+      id="nome"
+      formControlName="nomeServico"
+      [(ngModel)]="servicoBuscado.nome"
+      type="text"
+      class="form-control"
+      autocomplete="off"
+    />
+    <label for="tipo" class="form-label">Tipo</label>
+    <input
+      id="tipo"
+      formControlName="tipoServico"
+      [(ngModel)]="servicoBuscado.tipo"
+      class="form-control"
+      autocomplete="off"
+    />
+    <label for="valor" class="form-label">Valor</label>
+    <input
+      id="valor"
+      formControlName="valorServico"
+      [(ngModel)]="servicoBuscado.valor"
+      class="form-control"
+      autocomplete="off"
+    />
+  </div>
+  <br />
+
+  <input
+    type="submit"
+    value="Salvar"
+    class="btn btn-primary"
+    [disabled]="formServico.invalid"
+  />
+  <br />
 </form>
