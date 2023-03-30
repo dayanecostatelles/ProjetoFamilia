@@ -11,6 +11,10 @@ import { CommonModule } from '@angular/common';
 import { EditarClienteComponent } from './feature/cliente/editar-cliente/editar-cliente.component';
 import { ListarClienteComponent } from './feature/cliente/listar-cliente/listar-cliente.component';
 import { BuscarClienteComponent } from './feature/cliente/buscar-cliente/buscar-cliente.component';
+import { AdicionarServicoComponent } from './feature/servico/adicionar-servico/adicionar-servico.component';
+import { EditarServicoComponent } from './feature/servico/editar-servico/editar-servico.component';
+import { ListarServicoComponent } from './feature/servico/listar-servico/listar-servico.component';
+import { BuscarServicoComponent } from './feature/servico/buscar-servico/buscar-servico.component';
 
 
 @NgModule({
@@ -19,7 +23,11 @@ import { BuscarClienteComponent } from './feature/cliente/buscar-cliente/buscar-
     AdicionarClienteComponent,
     EditarClienteComponent,
     ListarClienteComponent,
-    BuscarClienteComponent
+    BuscarClienteComponent,
+    AdicionarServicoComponent,
+    EditarServicoComponent,
+    ListarServicoComponent,
+    BuscarServicoComponent
   ],
   imports: [
     CommonModule,
