@@ -8,10 +8,14 @@
     <div class="col-12">
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="row">
-          <div class="container col-3">
-            <a class="navbar-brand" routerLink="/">Pagina Inicial</a>
+          <div class="container col-5">
+            <p style="margin-top: 9px">
+              <a routerLink="/" class="text-decoration-none">
+                Pagina Inicial
+              </a>
+            </p>
           </div>
-          <div class="container col-4">
+          <div class="container col-3">
             <div class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -33,15 +37,10 @@
                     >Adicionar Cliente</a
                   >
                 </li>
-                <li>
-                  <a class="dropdown-item" routerLink="/cliente/editar"
-                    >Editar Cliente</a
-                  >
-                </li>
               </ul>
             </div>
           </div>
-          <div class="container col-5">
+          <div class="container col-3">
             <div class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -78,9 +77,9 @@
   <div class="row">
     <div class="container col-6">
       <router-outlet></router-outlet>
-      <div>
+      <div id="idLogo">
         <p></p>
-        <img class="img-fluid" src="./../assets/logo.jpeg" />
+        <img *ngIf="showLogo" class="img-fluid" src="./../assets/logo.jpeg" />
       </div>
     </div>
   </div>

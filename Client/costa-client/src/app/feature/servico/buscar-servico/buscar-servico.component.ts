@@ -33,7 +33,7 @@ export class BuscarServicoComponent implements OnInit {
       .subscribe((dados) => {
         if(dados){
           this.servicoBuscado = dados;
-          debugger;
+
           this.dadosEncontrados = true;
 
         }        

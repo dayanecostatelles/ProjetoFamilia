@@ -40,7 +40,6 @@ buscarServicos() : void {
   .subscribe((dados) => {
     if(dados){
       this.servicosBuscados = dados;
-      debugger;
       this.dadosEncontrados = true;
 
     }        
